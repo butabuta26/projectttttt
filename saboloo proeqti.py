@@ -32,5 +32,15 @@ for movie in movies:
 #NATALI
     year = movie.find('span', class_= 'subtle start-year').text
     movie_rating = movie.find('span', class_ = 'tMeterScore').text
+    
 #au amis mere fuls mogvcemen??? XD
+
+#ANA
+    director = movie.find('div', class_ = 'info director').text
+
+    c+=1
+    csvwriter.writerow([c, name, year, movie_rating, director]) 
+   
+print(f"Done writing {c} entries to the csv file!")
+csvfile.close()
 
