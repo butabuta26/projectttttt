@@ -17,3 +17,14 @@ soup = BeautifulSoup(website, 'lxml')
 movies = soup.find_all('div', class_= 'row countdown-item')
 c = 0
 
+for movie in movies:
+    name_rating_year = movie.find('div', class_= "article_movie_title").text.split()
+    # print(movie.find('span', class_= 'subtle start-year').text)
+    # print(type(name_rating_year))
+
+    name_rating = name_rating_year.copy()
+    name_rating.remove(str(movie.find('span', class_= 'subtle start-year').text))
+    name = name_rating.copy()
+    name.remove(str(movie.find('span', class_= 'tMeterScore').text))
+    name = ' '.join(name)
+
