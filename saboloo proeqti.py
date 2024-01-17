@@ -17,6 +17,7 @@ soup = BeautifulSoup(website, 'lxml')
 movies = soup.find_all('div', class_= 'row countdown-item')
 c = 0
 
+#SOPHIO
 for movie in movies:
     name_rating_year = movie.find('div', class_= "article_movie_title").text.split()
     # print(movie.find('span', class_= 'subtle start-year').text)
